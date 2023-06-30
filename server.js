@@ -5,7 +5,6 @@ const encoder = bodyParser.urlencoded();
 require('dotenv').config();
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
 app.use("/assets", express.static("assets"));
 
 const connection = mysql.createConnection({
