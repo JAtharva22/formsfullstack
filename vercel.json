@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/admin_view/(.*)",
+      "dest": "admin_view.html"
+    },
+    {
+      "src": "/customer_form/(.*)",
+      "dest": "customer_form.html"
+    }
+  ]
+}
