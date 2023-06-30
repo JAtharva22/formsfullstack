@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      label {
+        display: block;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Customer Form</h1>
+    <form name="myForm" action="/customer_form/:cust" method="POST">
+      <label for="orderDate">Order Date:</label>
+      <input type="date" id="orderDate" name="orderDate" required /><br />
+
+      <label for="company">Company:</label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        pattern="[a-zA-Z0-9\s]+"
+        required
+      /><br />
+
+      <label for="owner">Owner:</label>
+      <input
+        type="text"
+        id="owner"
+        name="owner"
+        pattern="[a-zA-Z0-9\s]+"
+        required
+      /><br />
+
+      <label for="item">Item:</label>
+      <input type="text" id="item" name="item" required /><br />
+
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        required
+      /><br />
+
+      <label for="weight">Weight:</label>
+      <input
+        type="number"
+        id="weight"
+        name="weight"
+        step="0.01"
+        min="0"
+        required
+      /><br />
+
+      <label for="request">Request for Shipment:</label>
+      <input type="text" id="request" name="request" required /><br />
+
+      <label for="trackingId">Tracking ID:</label>
+      <input type="text" id="trackingId" name="trackingId" required /><br />
+
+      <label for="shipmentSize">Shipment Size (LxBxH):</label>
+      <input type="text" id="shipmentSize" name="shipmentSize" required /><br />
+
+      <label for="boxCount">Box Count:</label>
+      <input
+        type="number"
+        id="boxCount"
+        name="boxCount"
+        min="1"
+        required
+      /><br />
+
+      <label for="specification">Specification:</label>
+      <input
+        type="text"
+        id="specification"
+        name="specification"
+        required
+      /><br />
+
+      <label for="checklistQuantity">Checklist Quantity:</label>
+      <input
+        type="text"
+        id="checklistQuantity"
+        name="checklistQuantity"
+        required
+      /><br />
+
+      <input type="submit" value="Submit"/>
+    </form>
+  </body>
+</html>

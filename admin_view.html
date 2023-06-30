@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin View</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin View</h1>
+    <h2>Data Table</h2>
+    <div id="data-table"></div>
+
+    <script>
+      function fetchData() {
+        fetch("/admin_view/table")
+          .then((response) => response.text())
+          .then((data) => {
+            displayData(data);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      }
+
+      function displayData(data) {
+        const dataTable = document.getElementById("data-table");
+        dataTable.innerHTML = data;
+      }
+
+      fetchData();
+    </script>
+  </body>
+</html>
