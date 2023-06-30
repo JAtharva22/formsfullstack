@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_ROOT,
   password: process.env.DB_PASSWORD,
-  database: "forms",
+  database: process.env.DB_NAME,
   authPlugins: {
     mysql_clear_password: () => () => Buffer.from(password + "\0"),
   },
