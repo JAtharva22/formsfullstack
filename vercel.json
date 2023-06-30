@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "server.js"
+    },
+    {
+      "src": "/admin_view/(.*)",
+      "dest": "admin_view.html"
+    },
+    {
+      "src": "/customer_form/(.*)",
+      "dest": "customer_form.html"
+    }
+  ]
+}

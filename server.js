@@ -1,6 +1,6 @@
-const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
+const mysql = require("mysql2");
 const encoder = bodyParser.urlencoded();
 require('dotenv').config();
 
@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_ROOT,
   password: process.env.DB_PASSWORD,
-  database: "forms",
+  database: process.env.DB_NAME,
   authPlugins: {
     mysql_clear_password: () => () => Buffer.from(password + "\0"),
   },
@@ -178,7 +178,7 @@ app.post("/customer_form/:cust", encoder, (req, res) => {
 });
 
 // Set app port
-const port = process.env.WEB_PORT;
+const port = process.env.WEB_PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   console.log(`Server running at http://localhost:${port}/`);
